@@ -1,4 +1,12 @@
+/******************** 基础类型 *******************/
+// 类型断言
+// Object
+// void\null\undefined\never
+// any：
+var notSure = 4;
+var list = [1, true, "free"];
 // 枚举 enum：对 js 数据类型的一个补充，可以为一组数值赋予友好的名字
+// (暂时理解成可以 key、value 颠倒的对象)
 var Color;
 (function (Color) {
     Color[Color["Red"] = 0] = "Red";

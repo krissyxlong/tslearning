@@ -3,108 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        body{
+            height: 2000px;
+        }
+        #hello{
+            position: relative;
+        }
+        #hi{
+            position: absolute;
+        }
+    </style>
 </head>
 <body>
-    <div id="hi"></div>
-    <div id="hello"></div>
-    hehe da
-    <script>
-        // function Obj(value) {
-        //     this.value = value;
-        //     this.next = null;
-        // }
-        //
-        // Obj.prototype[Symbol.iterator] = function() {
-        //     let iterator = { next: next };
-        //
-        //     let current = this;
-        //
-        //     function next() {
-        //         if (current) {
-        //             let value = current.value;
-        //             current = current.next;
-        //             return { done: false, value: value };
-        //         } else {
-        //             return { done: true };
-        //         }
-        //     }
-        //     return iterator;
-        // }
-        //
-        // let one = new Obj(1);
-        // let two = new Obj(2);
-        // let three = new Obj(3);
-        //
-        // one.next = two;
-        // two.next = three;
-
-
-        // const itFunc = (arr) => {
-        //     let index = 0;
-        //     return {
-        //         next: () => {
-        //             if (index < arr.length) {
-        //                 return {
-        //                     value: arr[index++],
-        //                     done: false
-        //                 }
-        //             }
-        //             return {
-        //                 done: true
-        //             }
-        //         }
-        //     }
-        // }
-        // const arrf = itFunc([1, 2, 3]);
-        // console.log(arrf.next()); // {value: 1, done: false}
-        // console.log(arrf.next()); // {value: 2, done: false}
-        // console.log(arrf.next()); // {value: 3, done: false}
-        // console.log(arrf.next()); // {done: true}
-
-
-
-        // function createWorker(f) {
-        //     let blob = new Blob(['(' + f.toString() +')()']);
-        //     let url = window.URL.createObjectURL(blob);
-        //     let worker = new Worker(url);
-        //     return worker;
-        // }
-        //
-        // // worker
-        // let pollingWorker = createWorker(function (e) {
-        //     // 往主线程发消息
-        //     setInterval(function () {
-        //         self.postMessage('hello');
-        //     }, 1000);
-        //
-        //     // 接收主线程消息
-        //     self.addEventListener('message', (e) => {
-        //         self.postMessage('nonono');
-        //     })
-        //
-        //     // 内部关闭 woker
-        //     setInterval(() => {
-        //         self.close();
-        //     }, 10000)
-        // });
-        //
-        // // 主线程接收消息
-        // pollingWorker.onmessage = function (e) {
-        //     console.log('data:', e.data);
-        //     let $ele = document.getElementById('hi');
-        //     let text = $ele.innerHTML;
-        //     $ele.innerHTML = (text + e.data);
-        //     // render data
-        // }
-        // // 主线程发送消息
-        // pollingWorker.postMessage('init');
-        //
-        // // 主线程终止 woker
-        // setInterval(() => {
-        //     pollingWorker.terminate();
-        // }, 20000)
-    </script>
-    <script src="./src/index.js"></script>
-
+    <div id="hello">
+        <div id="hi">
+            yidong
+        </div>
+    </div>
+    <script src="src/ts/function.js"></script>
 </body>
 </html>
