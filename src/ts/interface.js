@@ -1,3 +1,13 @@
+/** 接口继承 */
+/** 混合类 */
+/** 继承接口：从一个接口里复制成员到另一个接口里 */
+/** 类类型 */
+/** 可索引类型 */
+var mySearch;
+mySearch = function (source, subString) {
+    var result = source.search(subString);
+    return result > -1;
+};
 var p1 = { x: 10, y: 20 };
 console.log('p1:', p1);
 function createSquare(config) {
