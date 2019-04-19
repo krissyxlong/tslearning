@@ -5,3 +5,7 @@
 # Package Files #
 
 *.idea
+*.git
+/node_modules
+yarn-error.lock
+yarn.lock
