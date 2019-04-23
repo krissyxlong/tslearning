@@ -9,3 +9,4 @@
 /node_modules
 yarn-error.lock
 yarn.lock
+/react-app/node_modules
