@@ -10,3 +10,5 @@
 yarn-error.lock
 yarn.lock
 /react-app/node_modules
+/test/node_modules
+.idea/workspace.xml
