@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ec777d7-d366-4cb5-95c9-c68d66f497af" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/react-app/src/component/dndSorter/Card.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-app/src/component/dndSorter/ItemTypes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-app/src/component/dndSorter/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-app/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-app/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-app/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-app/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/react-app/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -46,30 +52,30 @@
         <counts>
           <entry key="LICENSE" value="1" />
           <entry key="css" value="2" />
-          <entry key="gitignore" value="3" />
+          <entry key="gitignore" value="5" />
           <entry key="html" value="3" />
-          <entry key="js" value="39" />
-          <entry key="json" value="6" />
-          <entry key="ts" value="13" />
+          <entry key="js" value="45" />
+          <entry key="json" value="7" />
+          <entry key="ts" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="2" />
           <entry key="HTML" value="3" />
-          <entry key="JSON" value="3" />
-          <entry key="JavaScript" value="39" />
-          <entry key="PLAIN_TEXT" value="4" />
-          <entry key="TypeScript" value="13" />
+          <entry key="JSON" value="4" />
+          <entry key="JavaScript" value="45" />
+          <entry key="PLAIN_TEXT" value="6" />
+          <entry key="TypeScript" value="14" />
           <entry key="tsconfig" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="7" />
-          <entry key="gitignore" value="76" />
+          <entry key="gitignore" value="85" />
           <entry key="html" value="398" />
-          <entry key="js" value="2306" />
+          <entry key="js" value="2321" />
           <entry key="json" value="4" />
           <entry key="ts" value="1809" />
         </counts>
@@ -78,8 +84,8 @@
         <counts>
           <entry key="CSS" value="8" />
           <entry key="HTML" value="397" />
-          <entry key="JavaScript" value="2306" />
-          <entry key="PLAIN_TEXT" value="76" />
+          <entry key="JavaScript" value="2321" />
+          <entry key="PLAIN_TEXT" value="85" />
           <entry key="TypeScript" value="1809" />
           <entry key="tsconfig" value="4" />
         </counts>
@@ -96,80 +102,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/react-app/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+            <state relative-caret-position="255">
+              <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
               <folding>
-                <element signature="e#487#512#0" expanded="true" />
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/react-app/src/component/dnd/board.js">
+        <entry file="file://$PROJECT_DIR$/react-app/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="51" column="34" selection-start-line="40" selection-start-column="8" selection-end-line="51" selection-end-column="34" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/react-app/src/component/dnd/borderSquare.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/react-app/src/component/dnd/square.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/react-app/src/component/dnd/contants.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/react-app/src/component/dnd/game.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/react-app/src/component/dnd/knight.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-12">
-              <caret line="5" column="18" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="18" />
+            <state relative-caret-position="102">
+              <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -178,13 +124,58 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/react-app/src/component/dnd/piece.js">
+        <entry file="file://$PROJECT_DIR$/react-app/src/component/dndSorter/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+            <state relative-caret-position="85">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
               <folding>
-                <element signature="e#0#25#0" expanded="true" />
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/react-app/src/component/dndSorter/Card.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="105" column="2" selection-start-line="105" selection-start-column="2" selection-end-line="105" selection-end-column="2" />
+              <folding>
+                <element signature="e#0#58#0" expanded="true" />
+                <element signature="e#1412#3428#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/react-app/.gitignore">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/react-app/node_modules/dnd-core/lib/cjs/interfaces.d.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2419">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/react-app/src/component/dnd/board.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-464">
+              <caret line="1" selection-start-line="1" selection-end-line="2" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -197,6 +188,7 @@
         <option value="tsconfig.json" />
         <option value="TypeScript File" />
         <option value="JavaScript File" />
+        <option value="AMD JavaScript File" />
       </list>
     </option>
   </component>
@@ -213,6 +205,8 @@
       <find>knightSource</find>
       <find>moveKnight</find>
       <find>html5Backend</find>
+      <find>ContainerState</find>
+      <find>useImperativeHandle</find>
     </findStrings>
     <replaceStrings>
       <replace>const</replace>
@@ -258,7 +252,6 @@
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/react-app/src/component/dnd.js" />
-        <option value="$PROJECT_DIR$/react-app/src/App.js" />
         <option value="$PROJECT_DIR$/react-app/src/App.css" />
         <option value="$PROJECT_DIR$/react-app/src/component/dnd/index.js" />
         <option value="$PROJECT_DIR$/react-app/src/component/dnd/contants.js" />
@@ -269,6 +262,12 @@
         <option value="$PROJECT_DIR$/react-app/src/component/dnd/board.js" />
         <option value="$PROJECT_DIR$/react-app/src/component/dnd/borderSquare.js" />
         <option value="$PROJECT_DIR$/react-app/src/index.js" />
+        <option value="$PROJECT_DIR$/react-app/src/component/dnsSorter/index.js" />
+        <option value="$PROJECT_DIR$/react-app/src/component/dnsSorter/ItemTypes.js" />
+        <option value="$PROJECT_DIR$/react-app/src/component/dnsSorter/Card.js" />
+        <option value="$PROJECT_DIR$/react-app/src/App.js" />
+        <option value="$PROJECT_DIR$/react-app/src/component/dndSorter/index.js" />
+        <option value="$PROJECT_DIR$/react-app/src/component/dndSorter/Card.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
@@ -292,7 +291,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="1984" />
     <option name="y" value="43" />
-    <option name="width" value="1446" />
+    <option name="width" value="1607" />
     <option name="height" value="921" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -312,11 +311,6 @@
               <item name="tslearning" type="b2602c69:ProjectViewProjectNode" />
               <item name="tslearning" type="462c0819:PsiDirectoryNode" />
               <item name="react-app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tslearning" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tslearning" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -401,18 +395,18 @@
       <workItem from="1555655384842" duration="17000" />
       <workItem from="1555667141017" duration="181000" />
       <workItem from="1555927844101" duration="1688000" />
-      <workItem from="1555982636051" duration="17396000" />
+      <workItem from="1555982636051" duration="18777000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100851000" />
+    <option name="totallyTimeSpent" value="102232000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1984" y="43" width="1446" height="921" extended-state="0" />
+    <frame x="1984" y="43" width="1607" height="921" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24573864" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20395157" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -424,7 +418,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.4923664" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3918575" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" order="11" weight="0.3287858" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -459,9 +453,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/mod0.ts" />
-    <entry file="file://$PROJECT_DIR$/src/mod1.ts" />
-    <entry file="file://$PROJECT_DIR$/src/module.js" />
     <entry file="file://$PROJECT_DIR$/src/module.ts" />
     <entry file="file://$PROJECT_DIR$/src/ts/variableDeclaration.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -665,24 +656,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/react-app/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/react-app/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/react-app/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -693,13 +670,6 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/react-app/src/component/dnd/contants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -747,30 +717,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/react-app/src/index.js">
+    <entry file="file://$PROJECT_DIR$/react-app/src/component/dnd/contants.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        <state relative-caret-position="34">
+          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/react-app/src/component/dndSorter/ItemTypes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/react-app/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
           <folding>
-            <element signature="e#487#512#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/react-app/src/component/dndSorter/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/react-app/src/component/dnd/board.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="51" column="34" selection-start-line="40" selection-start-column="8" selection-end-line="51" selection-end-column="34" />
+        <state relative-caret-position="-464">
+          <caret line="1" selection-start-line="1" selection-end-line="2" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/react-app/node_modules/dnd-core/lib/cjs/interfaces.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2419">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/react-app/src/component/dndSorter/Card.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="105" column="2" selection-start-line="105" selection-start-column="2" selection-end-line="105" selection-end-column="2" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#0#58#0" expanded="true" />
+            <element signature="e#1412#3428#0" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/react-app/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="21" column="4" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/react-app/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/react-app/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        <state relative-caret-position="119">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
         </state>
       </provider>
     </entry>
