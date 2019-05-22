@@ -10,7 +10,6 @@ import {
     DragSourceMonitor,
 } from 'react-dnd'
 import ItemTypes from './ItemTypes'
-import { XYCoord } from 'dnd-core'
 
 const style = {
     border: '1px dashed gray',

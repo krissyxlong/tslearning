@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import DND from './component/dndSorter';
+import changeNum2Str from './component/alg/1';
 import './App.css';
+
+changeNum2Str();
 
 class App extends Component {
   render() {
