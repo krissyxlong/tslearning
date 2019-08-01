@@ -9,19 +9,12 @@ import ContextComponent from './component/context';
 
 class App extends Component {
   componentDidMount() {
-      import('./component/redux');
+      import('./component/redux/index0');
   }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-            <div id='hello'></div>
-          {/*<DND />*/}
-          <ContextComponent />
-        </header>
+          <div id='hello'>hello world</div>
       </div>
     );
   }
