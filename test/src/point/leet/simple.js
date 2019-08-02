@@ -64,3 +64,75 @@ const findHuiwenMaxLength = (s) => {
     return maxStr;
 }
 console.log(222222222, findHuiwenMaxLength('sdsgfds'));*/
+
+// 求最大盛水桶
+// const maxArea = (arr) => {
+//     let maxV = 0;
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let j = i + 1; j < arr.length; j++) {
+//             let area = Math.min(arr[i], arr[j]) * (j - i);
+//             maxV = Math.max(area, maxV);
+//         }
+//     }
+//     return maxV;
+// };
+// console.log('area', maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]));
+
+// const toArab = (number) => {
+//     if (number > 3999 || number < 1) {
+//         return 'exceed scope';
+//     }
+//     const generateStr = ([s1, s2, s3]) => {
+//         if (s3)
+//         return ['', s1, `${s1}${s1}`, `${s1}${s1}${s1}`, `${s1}${s2}`, s2, `${s2}${s1}`, `${s2}${s1}${s1}`, `${s2}${s1}${s1}${s1}`, `${s1}${s3}`];
+//         return ['', s1, `${s1}${s1}`, `${s1}${s1}${s1}`];
+//     };
+//     const A1 = generateStr(['I', 'V', 'X']);
+//     const A2 = generateStr(['X', 'L', 'C']);
+//     const A3 = generateStr(['C', 'D', 'M']);
+//     const A4 = generateStr(['M']);
+//     const SCOPE = [A1, A2, A3, A4];
+//     const parseNumber = String(number).split('').reverse();
+//     return parseNumber.reduce((result, item, index) => {
+//         return `${SCOPE[index][Number(item)]}${result}`;
+//     }, '');
+// };
+// console.log('toArab', toArab(3999));
+
+const parseArab = (str) => {
+    if (!str) {
+        return 'error';
+    }
+    const generateStr = ([s1, s2, s3]) => {
+        if (s3)
+            return ['', s1, `${s1}${s1}`, `${s1}${s1}${s1}`, `${s1}${s2}`, s2, `${s2}${s1}`, `${s2}${s1}${s1}`, `${s2}${s1}${s1}${s1}`, `${s1}${s3}`];
+        return ['', s1, `${s1}${s1}`, `${s1}${s1}${s1}`];
+    };
+    const A1 = generateStr(['I', 'V', 'X']);
+    const A2 = generateStr(['X', 'L', 'C']);
+    const A3 = generateStr(['C', 'D', 'M']);
+    const A4 = generateStr(['M']);
+    const SCOPE = [A1, A2, A3, A4];
+    const result = [];
+    for (let i = 0; i < SCOPE.length; i++) {
+        if (str) {
+            const A = SCOPE[i];
+            let indexF;
+            let currentIndex;
+            for (let j = A.length - 1; j >= 0; j--) {
+                indexF = str.lastIndexOf(A[j]);
+                if (indexF > -1) {
+                    currentIndex = j;
+                    str = str.slice(0, indexF);
+                    break;
+                }
+            }
+            result[i] = currentIndex || 0;
+        } else {
+            break;
+        }
+    }
+    return result.reverse().join('');
+};
+console.log('toArab', parseArab('MMXCIX'));
+
