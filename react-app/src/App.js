@@ -9,6 +9,7 @@ import ContextComponent from './component/context';
 
 class App extends Component {
   componentDidMount() {
+      // import('./component/redux/index0');
       import('./component/redux/index0');
   }
   render() {
