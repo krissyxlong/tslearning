@@ -10,3 +10,5 @@
 */node_modules
 .idea/workspace.xml
 */yarn.lock
+antd-app/
+antd-app/*

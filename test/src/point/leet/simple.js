@@ -1,3 +1,28 @@
+const findmaxstr = (strArr) => {
+    const lenArr = strArr.map(str => str.length); // 所有字符长度
+    const minPos = lenArr.indexOf(Math.min(...lenArr)); // 最短字符位置
+    const minStr = strArr[minPos]; // 最短字符
+    let flag = true;
+    let index = 0;
+    for (let i = 0; i < minStr.length; i++) {
+        const ai =  minStr[i];
+        for (let j = 0; j < strArr.length; j++) {
+            if (strArr[j][i] !== ai) {
+                flag = false;
+                index = i;
+                break;
+            }
+        }
+        if (!flag) {
+            break;
+        }
+    }
+    return minStr.slice(0, index);
+};
+
+console.log(findmaxstr(['flower', 'flow', 'wfloight']));
+
+
 // 找出字符串中不含有重复字符的最长子串的长度
 /*const repeated = (arr) => {
     return arr.length > [...new Set(arr)].length;
@@ -99,40 +124,40 @@ console.log(222222222, findHuiwenMaxLength('sdsgfds'));*/
 // };
 // console.log('toArab', toArab(3999));
 
-const parseArab = (str) => {
-    if (!str) {
-        return 'error';
-    }
-    const generateStr = ([s1, s2, s3]) => {
-        if (s3)
-            return ['', s1, `${s1}${s1}`, `${s1}${s1}${s1}`, `${s1}${s2}`, s2, `${s2}${s1}`, `${s2}${s1}${s1}`, `${s2}${s1}${s1}${s1}`, `${s1}${s3}`];
-        return ['', s1, `${s1}${s1}`, `${s1}${s1}${s1}`];
-    };
-    const A1 = generateStr(['I', 'V', 'X']);
-    const A2 = generateStr(['X', 'L', 'C']);
-    const A3 = generateStr(['C', 'D', 'M']);
-    const A4 = generateStr(['M']);
-    const SCOPE = [A1, A2, A3, A4];
-    const result = [];
-    for (let i = 0; i < SCOPE.length; i++) {
-        if (str) {
-            const A = SCOPE[i];
-            let indexF;
-            let currentIndex;
-            for (let j = A.length - 1; j >= 0; j--) {
-                indexF = str.lastIndexOf(A[j]);
-                if (indexF > -1) {
-                    currentIndex = j;
-                    str = str.slice(0, indexF);
-                    break;
-                }
-            }
-            result[i] = currentIndex || 0;
-        } else {
-            break;
-        }
-    }
-    return result.reverse().join('');
-};
-console.log('toArab', parseArab('MMXCIX'));
+// const parseArab = (str) => {
+//     if (!str) {
+//         return 'error';
+//     }
+//     const generateStr = ([s1, s2, s3]) => {
+//         if (s3)
+//             return ['', s1, `${s1}${s1}`, `${s1}${s1}${s1}`, `${s1}${s2}`, s2, `${s2}${s1}`, `${s2}${s1}${s1}`, `${s2}${s1}${s1}${s1}`, `${s1}${s3}`];
+//         return ['', s1, `${s1}${s1}`, `${s1}${s1}${s1}`];
+//     };
+//     const A1 = generateStr(['I', 'V', 'X']);
+//     const A2 = generateStr(['X', 'L', 'C']);
+//     const A3 = generateStr(['C', 'D', 'M']);
+//     const A4 = generateStr(['M']);
+//     const SCOPE = [A1, A2, A3, A4];
+//     const result = [];
+//     for (let i = 0; i < SCOPE.length; i++) {
+//         if (str) {
+//             const A = SCOPE[i];
+//             let indexF;
+//             let currentIndex;
+//             for (let j = A.length - 1; j >= 0; j--) {
+//                 indexF = str.lastIndexOf(A[j]);
+//                 if (indexF > -1) {
+//                     currentIndex = j;
+//                     str = str.slice(0, indexF);
+//                     break;
+//                 }
+//             }
+//             result[i] = currentIndex || 0;
+//         } else {
+//             break;
+//         }
+//     }
+//     return result.reverse().join('');
+// };
+// console.log('toArab', parseArab('MMXCIX'));
 
