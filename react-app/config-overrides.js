@@ -1,5 +1,5 @@
 module.exports = function override(config, env) {
-    //do stuff with the webpack config...
+    // 添加 worker-loader
     config.module.rules.push({
         test: /\.worker\.js$/,
         use: {
@@ -9,6 +9,9 @@ module.exports = function override(config, env) {
             }
         }
     });
+    // 配置环境
     config.output.globalObject = 'this';
     return config;
-}
+};
+
+
