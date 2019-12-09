@@ -19,6 +19,12 @@ const developmentConfig = merge([
 ]);
 
 const productionConfig = merge([
+    {
+        output: {
+            chunkFilename: "[name].[chunkhash:4].js",
+            filename: "[name].[chunkhash:4].js",
+        },
+    },
     parts.extractCSS({
         use: ["css-loader", parts.autoprefix()],
     }),
@@ -28,9 +34,21 @@ const productionConfig = merge([
     parts.loadImages({
         options: {
             limit: 20000,
-            name: "[name].[ext]",
+            name: "[name].[hash:4].[ext]"
         },
     }),
+    {
+        optimization: {
+            splitChunks: {
+                chunks: "initial",
+            },
+            runtimeChunk: {
+                name: "manifest", // 生成 manifest 文件
+            }
+        },
+    },
+    parts.attachRevision(),
+    parts.minifyJavaScript(),
 ]);
 
 module.exports = mode => {

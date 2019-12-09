@@ -182,16 +182,128 @@ plugin:
     loading js
 5、building
     source maps
+        开发环境用来调试
     bundle splitting
+        每次发布更新后，不需要重新加载整个 bundle，后只需下载变化的部分，通过设置 optimization.splitChunks.cacheGroups 实现，webpack4 在生产环境会默认部署。
+        (1) the idea of bundle splitting
+        (2) adding sth to split
+        (3) setting up a vendor bundle
+            optimization.splitChunks.chunks = 'initial';
+        (4) controlling bundle splitting
+            另一种方案：
+            optimization.splitChunks.cacheGroups.commons = {}; // 更多可控性
+        (5) splitting and merging chunks
+            AggressiveSplittingPlugin 、 AggressiveMergingPlugin
+        (6) chunk types in webpack
+            entry chunks
+            normal chunks
+            initial chunks
+        (7) conclusion
     code splitting
+        相比于 spit bundles, code splitting 可以实现按需加载
+        (1) code splitting formats
+            主要两种方式实现：（1.1）a dynamic import; （1.2）require.ensure. 初始化 payload 会更小。
+            dynamic imports 还没进入官方声明。dynamic imports are defined as Promises.
+        (2) setting up code splitting
+            configuring babel
+            defining a slit point using a dynamic import
+        (3) code splitting in react
+            服务端渲染时，不需要开启 code splitting。
+        (4) disable code splitting
+            use webpack.optimize.LimitChunkCountPlugin with maxChunks set to one.
+        (5) conclusion
+            可以提高首屏加载速度，提高用户体验；
+            使用动态 import 语法，babel 和 eslint 都需要配置
+            can be disabled
     tidying up
+        cleaning the build Directory
+            通过脚本实现：rm -rf ./build && webpack or rimraf ./build && webpack
+            setting up CleanWebpackPlugin（https://www.npmjs.com/package/copy-webpack-plugin）
+        attaching a revision to the build
+            setting up BannerPlugin and GitRevisionPlugin
+            BannerPlugin: attaching information related to the current build revision to the build files for debugging.
+            GitRevisionPlugin: generate a small comment at the beginning of the generated files.
+        coping files
+            copy individual files or entire directories, which already exist, to the build directory.
+    conclusion
+        提高构建体验和效率：
+            开发阶段：添加 source-map 方便调试
+            上线阶段：使用 splitting chunks 和 code splitting，提高首屏加载时间，提高用户体验
+            构建完成后：cleanWebpackPlugin 清空之前构建文件
 6、optimizing
+    实现更优的生产构建
     minifying
+        webpack 生产模式已经实现内部压缩，通过 terser(A JavaScript parser and mangler/compressor toolkit for ES6+) 组件，uglify 已不再维护。
+        (1) minifying js
+            安全压缩转换就是通过重写变量，或者取出不会被执行的代码。
+            modifying js minification process
+                webpack4 中通过 optimization.minimize 和 optimization.minimizer 来配置压缩.
+        other ways to minify js
+            其他方式压缩 js 代码
+        speed up js execution
+            preprocess code so that it will run faster
+            (a) scope hoisting
+                hoist all modules to a single scope instead of writing a separate closure for each.
+                这降低了构建速度，但是会执行更快
+            (b) pre-evaluation
+                it rewrites computation that can be done compile-time and therefore speeds up code execution.
+            (c) improving parsing
+                enhances the way js code gets parsed initially.    
+        (2) minifying html
+            html-loader \ posthtml-loader \ posthtml-minifier
+        (3) minifying CSS
+            setting up css minification: OptimizeCSSAssetsPlugin
+        (4) minifying Images
+            reduce image size: img-loader, imagemin-webpack, imagemin-webpack-plugin.
+            cache: cache-loader \ thread-loader
+        (5) conclusion
+            可压缩：js\html\css\image (主要通过 terser 插件实现)
     tree shaking
+        es2015 中定义，the idea is that given it's possible to analyze the module definition statically without running it.
+        (1) tree shaking on package level
+            to get most out of tree shaking with external packages, we have to use babel-plugin-transform-imports to rewrite imports so that
+            they work with webpack's tree shaking logic.
+        (2) conclusion
+            to benefit from tree shaking, npm packages have to be implemented using ES2015 module syntax.
     environment variables
+        DefinePlugin enables replacing free variables so that you can convert if(process.env.NODE_ENV) kind of code to if(true) depending on environment.
+        (1) The Basic Idea of DefinePlugin
+            elimination is the core idea of DefinePlugin and it allows toggling
+        (2) Setting process.env.NODE_ENV
+            需使用 JSON.stringify 封装。
+        (3) Choosing Which Module to Use
+        (4) conclusion
+            控制构建的时候应该加载哪部分资源
     adding hashes to fileNames
+        cache invalidation can be achieved by including a hash to the filenames
+        (1) placeholder
+            webpack provides placeholders for this purpose
+            [id]\[path]\[name]\[ext]\[hash]\[chunkhash]\[contenthash]
+            attaching the hash to the filename is the most performance option
+        (2) setting up hashing
+        (3) conclusion
+            主要给 css 和 js 文件加上 hash 值，常用：[name]\[ext]\[hash]\[chunkhash]
+            如果使用了 MiniCssExtractPlugin，需要使用[contenthash]
+            有一个问题就是：if you change the application code, it invalidates the vendor files as well! 提取 manifest 文件可以解决这个问题。
     separating a manifest
+        webpack 打包会生成一个 manifest 文件。该文件描述了 webpack 该加载什么文件. it's possible to extract it and start loading the files of project faster instead
+        of having to wait for vendor bundle to be loaded.
+        如果 webpack 生成的 hash 发生变化，manifest 文件也会发生变化，然后，the contents of the vendor bundle change, and become invalidated. The problem can be eliminated
+        by extracting the manifest to a file of its own or by writing it inline to the index.html of the project. 
+        (1) extracting a manifest
+            define optimization.runtimeChunk: {name: "manifest"}
+        (2) using records
+            进一步缓存策略
+        (3) conclusion
     build analysis
+        a good step to understanding webpack better
+        configuring webpack
+        Node api
+            StatsWebpackPlugin and WebpackStatsPlugin
+        enabling a performance budget
+        available analysis tools
+        Duplication analysis
+        conclusion
     performance
 7、output
     build targets

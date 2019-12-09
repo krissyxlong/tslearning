@@ -10,6 +10,7 @@ const config = merge([
             }),
         ]
     },
+    parts.setFreeVariable("HELLO", "hello from config"),
     // parts.loadLess()
 ]);
 module.exports = config;

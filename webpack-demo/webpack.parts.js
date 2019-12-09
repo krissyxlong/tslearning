@@ -1,5 +1,31 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const PurifyCSSPlugin = require("purifycss-webpack");
+const webpack = require("webpack");
+const GitRevisionPlugin = require("git-revision-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
+
+exports.setFreeVariable = (key, value) => {
+    const env = {};
+    env[key] = JSON.stringify(value);
+
+    return {
+        plugins: [new webpack.DefinePlugin(env)],
+    };
+};
+
+exports.minifyJavaScript = () => ({
+    optimization: {
+        minimizer: [new TerserPlugin({ sourceMap: true })],
+    },
+});
+
+exports.attachRevision = () => ({
+    plugins: [
+        new webpack.BannerPlugin({
+            banner: new GitRevisionPlugin().version(),
+        }),
+    ],
+})
 
 exports.loadImages = ({ include, exclude, options } = {}) => ({
     module: {
@@ -31,7 +57,7 @@ exports.purifyCSS = ({ paths }) => ({
 exports.extractCSS = ({ include, exclude, use = [] }) => {
     // Output extracted CSS to a file
     const plugin = new MiniCssExtractPlugin({
-        filename: "[name].css",
+        filename: "[name].[contenthash:4].css",
     });
 
     return {

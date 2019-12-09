@@ -13,4 +13,5 @@
 antd-app/
 antd-app/*
 */.idea/workspace.xml
+*/dist
 
