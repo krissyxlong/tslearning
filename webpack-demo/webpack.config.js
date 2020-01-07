@@ -1,4 +1,5 @@
 const merge = require("webpack-merge");
+const webpack = require("webpack");
 const path = require("path");
 const glob = require("glob");
 
@@ -15,7 +16,10 @@ const developmentConfig = merge([
         port: process.env.PORT,
     }),
     parts.loadCSS(),
-    parts.loadImages()
+    parts.loadImages(),
+    {
+        plugins: [new webpack.HotModuleReplacementPlugin()]
+    }
 ]);
 
 const productionConfig = merge([
@@ -56,8 +60,29 @@ module.exports = mode => {
     // return merge(commonConfig, productionConfig, { mode });
     // mode = 'production';
     console.log('mode:', mode);
-    if (mode === 'production') {
-        return merge(commonConfig, productionConfig, { mode });
-    }
-    return merge(commonConfig, developmentConfig, { mode });
+    const pages = [
+        parts.page({
+            title: "Webpack demo",
+            entry: {
+                app: PATHS.app,
+            },
+            chunks: ["app", "manifest", "vendors~app"],
+        }),
+        // parts.page({
+        //     title: "Another demo",
+        //     path: "another",
+        //     entry: {
+        //         another: path.join(PATHS.app, "another.js"),
+        //     },
+        //     chunks: ["another", "manifest", "vendors~app"],
+        // }),
+    ];
+    const config =
+        mode === "production" ? productionConfig : developmentConfig;
+
+    return merge([commonConfig, config, { mode }].concat(pages));
+    // if (mode === 'production') {
+    //     return merge(commonConfig, productionConfig, { mode });
+    // }
+    // return merge(commonConfig, developmentConfig, { mode });
 };
