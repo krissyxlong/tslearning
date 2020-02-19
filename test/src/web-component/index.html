@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/javascript" href="./index.css"></style>
+</head>
+<body>
+    <div>web components 入门</div>
+
+    <!-- custom Element 基本使用-->
+    <p>-- custom Element 基本使用--</p>
+    <popup-info data-text="测试text"></popup-info>
+    <script src="./index.js"></script>
+
+
+    <!-- custom built-in element -->
+    <p>-- custom built-in element --</p>
+    <ul is="expanding-list">
+        <li>UK
+            <ul>
+                <li>Yorkshire
+                    <ul>
+                        <li>Leeds
+                            <ul>
+                                <li>Train station</li>
+                                <li>Town hall</li>
+                                <li>Headrow</li>
+                            </ul>
+                        </li>
+                        <li>Bradford</li>
+                        <li>Hull</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <script src="./built-in.js"></script>
+
+
+    <!-- template、slot 使用：通过脚本获取模板再添加到 DOM 中 -->
+    <p>-- template、slot 使用：通过脚本获取模板再添加到 DOM 中 --</p>
+    <template id="my-paragraph">
+        <style>
+            p {
+                color: white;
+                background-color: #666;
+                padding: 5px;
+            }
+        </style>
+        <p><slot name="my-text">My default text1</slot></p>
+        <p><slot name="test">My default text2</slot></p>
+    </template>
+    <my-paragraph>
+        <span slot="my-text">heheheheehdadada</span>
+        <a slot="test">insert text</a>
+    </my-paragraph>
+    <my-paragraph>
+        <div slot="my-text">
+            <li>Let's have some different text!</li>
+            <li>In a list!</li>
+        </div>
+    </my-paragraph>
+    <script>
+        /** 添加 template 方案一 */
+        // let template = document.getElementById('my-paragraph');
+        // let templateContent = template.content;
+        // document.body.appendChild(templateContent);
+
+        /** 添加 template 方案二 */
+        customElements.define('my-paragraph',
+            class extends HTMLElement {
+                constructor() {
+                    super();
+                    let template = document.getElementById('my-paragraph');
+                    let templateContent = template.content;
+
+                    const shadowRoot = this.attachShadow({mode: 'open'})
+                        .appendChild(templateContent.cloneNode(true));
+                }
+            })
+    </script>
+</body>
+</html>

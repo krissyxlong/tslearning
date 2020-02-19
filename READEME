@@ -1,0 +1,22 @@
+- react-app
+    - alg 算法
+    - dnd 拖拽组件
+    - hooks hooks 实践
+    - redux redux 分享
+    - video worker 中实践解码视频（放弃）
+- test：只需写 js 逻辑
+    - src
+        - point
+            - bind
+            - debounce: debounce + throttle
+            - download: 浏览器端实现下载
+            - fetch: 原生 fetch 获取图片，并生成下载链接
+            - generator: (todo)
+            - let：暂时性死区
+            - promise：手写 Promise（todo）
+            - react：源代码初始学习
+            - requestFrameAnimation
+            - worker：worker 初始实践
+        - ts typescript 初学习，已忘记
+    - test.html 快速实验
+- webpack-demo：webpack 书籍实践
