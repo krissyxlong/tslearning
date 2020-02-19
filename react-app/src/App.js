@@ -1,24 +1,20 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-// import DND from './component/dndSorter';
-// import changeNum2Str from './component/alg/1';
+import React from 'react';
+import useWindowWidth from './component/hooks/useWindowWidth';
+import Context from './component/hooks/context';
+import SetInterval, { Step } from './component/hooks/setInterval';
+import Video from './component/video';
 import './App.css';
-import ContextComponent from './component/context';
 
-// changeNum2Str();
-
-class App extends Component {
-  componentDidMount() {
-      // import('./component/redux/index0');
-      import('./component/redux/index0');
-  }
-  render() {
-    return (
-      <div className="App">
-          <div id='hello'>hello world</div>
-      </div>
-    );
-  }
-}
+const App = () => {
+    // const width = useWindowWidth();
+    return <div className="App">
+        <div id='hello'>hello world</div>
+        {/*<p>窗口宽度：{width}</p>*/}
+        {/*<Context />*/}
+        {/*<SetInterval />*/}
+        {/*<Step />*/}
+        <Video />
+    </div>;
+};
 
 export default App;

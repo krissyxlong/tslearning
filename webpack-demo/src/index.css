@@ -1,0 +1,13 @@
+body {
+    background: cornsilk;
+
+    background-image: url("../images/test.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.pure-button {
+    -webkit-border-radius: 1em;
+    border-radius: 1em;
+  }
+  
