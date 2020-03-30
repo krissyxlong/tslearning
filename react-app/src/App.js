@@ -1,19 +1,23 @@
+/*
+ * @Description: 
+ * @Author: 
+ * @Date: 2020-01-10 16:34:38
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-03-30 17:50:26
+ */
 import React from 'react';
-import useWindowWidth from './component/hooks/useWindowWidth';
-import Context from './component/hooks/context';
-import SetInterval, { Step } from './component/hooks/setInterval';
-import Video from './component/video';
+import Demo from './component/hooks/demo';
 import './App.css';
 
 const App = () => {
     // const width = useWindowWidth();
     return <div className="App">
         <div id='hello'>hello world</div>
+        <Demo />
         {/*<p>窗口宽度：{width}</p>*/}
         {/*<Context />*/}
         {/*<SetInterval />*/}
         {/*<Step />*/}
-        <Video />
     </div>;
 };
 
