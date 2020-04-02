@@ -1,9 +1,4 @@
-const getSingle = (fn) => {
-    let result;
-    return function() {
-        if (!result) {
-            result = fn.apply(this, arguments);
-        }
-        return result;
-    };
-};
+const arr = [1, 2, 'a', 3, 5];
+for (let key in arr) {
+    console.log(key);
+}
