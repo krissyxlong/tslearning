@@ -8,7 +8,9 @@ function step(timestamp) {
     if (!start) start = timestamp;
     var progress = timestamp - start;
     console.log(timestamp, start, progress);
-    element.style.top = Math.floor(700 * (progress) / 1000) + 'px';
+    // element.style.left = Math.min(progress / 10, 200) + 'px';
+    // element.style.top = Math.floor(700 * (progress) / 1000) + 'px';
+    element.style.transform = 'translateX(' + Math.min(progress / 10, 200) + 'px)';
     if (progress < 1000) {
         window.requestAnimationFrame(step);
     } else {
