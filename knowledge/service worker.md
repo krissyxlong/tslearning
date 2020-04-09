@@ -19,10 +19,10 @@
 - 1、通过 url 获取 SW 来注册；
 - 2、如果注册成功，SW 在 serviceWorkerGlobalScope 中执行，这是一个独立于主线程的 worker 环境。
 - 3、SW 已经准备好处理事件
-- 4、当 SW 控制的页面被随后访问的时候，SW 已经开始尝试安装。SW 总是第一个发送给 SW 的。
+- 4、当 SW 控制的页面被随后访问的时候，SW 已经开始尝试安装。安装事件总是第一个发送给 SW 的（安装成功后触发）。
 - 5、当 oninstall handler 完成后，SW 被认为时安装完成。
-- 6、activation。当 installed 后就会接收到 activate 事件。
-- 7、现在 SW 控制页面了，但是只有那些在 register 成功后打开的页面。 i.e. a document starts life with or without a Service worker and maintains that for its lifetime.所以文档只有 reloaded 后才能被控制住。
+- 6、activation。当 installed 后就会接收到 activate 事件(当客户端没有控制其他的 SW 时就会被激活)。
+- 7、现在 SW 控制页面了，但是只有那些在 register 成功后打开的页面。 i.e. a document starts life with or without a Service worker and maintains that for its lifetime.  ___ so documents will have to be reloaded to actually be controlled ___
 
 ### SW 的生命周期
 注册完成后，sw.js 文件会自动进行
