@@ -22,4 +22,30 @@ ReactDOM.render(<App />, document.getElementById('root'))
 - 现在已经了解了 reconciliation 的过程，下面看下这种模型的缺点。
 >（题外话：为什么叫做 stack reconciler，这来源于堆的数据结构，后进先出机制。结果表明，做一次有效的递归，都与堆有关。）
 ### 递归
+- reconciliation 算法有点类似递归算法。一个更新会导致整个子树马上被重新渲染。尽管这可以 works well，但是有两个限制
+> (1) 每次 UI 更新并不需要立马被执行，事实上这非常浪费性能，会引起掉帧，降低用户体验。
+(2) 不同类型的更新有不同的优先级-动画更新需要被更快执行。
+- 现在已经理解了掉帧，但为什么递归会引起掉帧呢？这涉及到帧率。
+- 帧率。。。
+- 当每帧的渲染内容耗时超过了 16 ms 就会导致掉帧。这就是为什么需要按更新类型来区分优先级，而不是盲目地执行每次传递给 reconciler 的更新。另外需要有的特征是：可以中止、继续下一帧的 work，这样，react 可以更好的控制 16ms 的渲染工作。
+- 这就是 react team 为什么重写 reconciliation算法的原因，新算法叫 __Fiber__ 。下面开始了解 Fiber。
+
+----------
+### How fiber works
+- 先了解下 fiber 需要有的功能：
+> (1) 给不同的 work 安排优先级；(2) 可中止 work，并稍后返回；(3) 取消不再需要的 work；(4) 重复使用之前的 work。
+- 实现这样的过程的最大挑战就是 js engine 怎么工作
+
+### js execution stack
+- 当写 js 函数时，js engine 都会创建一个函数执行环境。每次 js engine 开始时，都会创建一个保存着全局变量的全局执行环境，例如浏览器中的 window 对象和 nodejs 中的 global 对象。这些环境都是用栈数据结构来处理的。
+- 事件队列原理：js engine 需等执行栈变空才会处理事件队列。虽然事件队列的事件被称为异步事件，但是异步只与到达队列的时间有关，而不是被处理的时间。
+- 回到 __stack reconciler__。当 react 遍历树的时候，就是这么在执行栈里操作的。所以，当有更新的时候，更新会被 push 进事件队列，当执行栈变空的时候，更新才会被处理。这就是 Fiber 解决的问题。
+> Fiber is reimplementation of the stack, specialized for react components.You can think of a single fiber as a virtual stack frame.  The advantage of reimplementating the stack is that you can keep stack frames in memory and execute them however you want. This is crucial for accomplishing the goals we have for scheduling. Aside from scheduling, manually dealing with stack frames unlocks the potential for features such as concurrency and error boundaries.
+- 一个 fiber 代表一个虚拟栈的 work。在之前的版本中，react 创建一个代表 element 的对象树，这些树时不能变更的，然后递归遍历整个树。而当前的版本，react 创建了可以该改变的 fiber node tree。__fiber node 保存了组件的 state，props，和底层的 DOM 元素。__
+- 因为 fiber node 是可以改变的，react 不需要在每次更新中都重建每个节点。当有更新是，可以克隆，复制节点。在 fiber tree 中。react 不会递归遍历，__instead, it creates a singly linked list and does a parent-first, depth-first traversal.__
+### singly linked list of fiber nodes
+- a fiber node 代表一个栈帧，同时也代表一个 react 组件实例。它由以下元素组成：
+##### Type | key | Child | Siblings
+#### Return
+
 
