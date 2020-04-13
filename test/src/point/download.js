@@ -26,16 +26,15 @@ const download = (url) => {
     }, 5 * 60 * 1000);
 }
 
-const url = 'http://focusmedia-order-output-dev.oss-cn-shanghai.aliyuncs.com/166234_108636.xlsx?Expires=1561694252&OSSAccessKeyId=LTAIQpJiQh6AHxCp&Signature=sO7%2BlrmXgSAf02%2FUIpkm7sufHZU%3D';
+const url = '';
 
 [1, 2, 3, 4].forEach(item => {
     download(url);
 })
 
-// const u = 'http://ww2.sinaimg.cn/large/4b4d632fgw1f1hhza4495j20ku0rsjxs.jpg';
+const u = 'http://ww2.sinaimg.cn/large/4b4d632fgw1f1hhza4495j20ku0rsjxs.jpg';
 // const u = 'icon.jpg';
 const u = 'http://pic.c-ctrip.com/VacationH5Pic/mice/wechat/ewm01.png';
-// const u = 'http://focusmedia-creative-output-dev.oss-cn-shanghai.aliyuncs.com/creative/image/management/9ed2464b772e43109b138f0e6bc74559/FM_231c07747a3b4781b69c7c60a06c0edc.jpg?Expires=1562314731&OSSAccessKeyId=LTAIQpJiQh6AHxCp&Signature=jZPvuu%2FAxl1bcuTld3yoi%2FK%2Bp34%3D';
 
 const dFile = (filePath) => {
     fetch(u, {
