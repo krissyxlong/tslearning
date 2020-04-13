@@ -1,0 +1,2 @@
+/*! For license information please see another.58f2.js.LICENSE */
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{0:function(n,e,t){"use strict";e.a=(n="hello from config")=>{const e=document.createElement("div");return e.innerHTML=n,e.className="pure-button",e.onclick=()=>t.e(4).then(t.bind(null,4)).then(n=>{e.textContent=n.default}).catch(n=>{console.error(n)}),e}},1:function(n,e,t){},12:function(n,e,t){"use strict";t.r(e);t(1);var o=t(0);const c=Object(o.a)("Another");document.body.appendChild(c)}},[[12,0]]]);

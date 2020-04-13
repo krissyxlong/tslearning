@@ -1,0 +1,2 @@
+/*! For license information please see app.bf72.js.LICENSE */
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],[function(n,e,t){"use strict";e.a=(n="hello from config")=>{const e=document.createElement("div");return e.innerHTML=n,e.className="pure-button",e.onclick=()=>t.e(4).then(t.bind(null,4)).then(n=>{e.textContent=n.default}).catch(n=>{console.error(n)}),e}},function(n,e,t){},,,,function(n,e,t){"use strict";t.r(e);t(2),t(7);var o=t(0);t(1),t(11);document.body.appendChild(Object(o.a)("a"))}],[[5,0,3]]]);
