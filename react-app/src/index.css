@@ -12,3 +12,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.visible{
+  width: 400px;
+}
+.visible .block{
+  height: 100px;
+}
+.visible .blue{
+  background-color: blue;
+}
+.visible .green{
+  background-color: green;
+}
+.visible .red{
+  background-color: red;
+}

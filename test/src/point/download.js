@@ -26,8 +26,13 @@ const download = (url) => {
     }, 5 * 60 * 1000);
 }
 
+const url = '';
 
-const u = 'http://ww2.sinaimg.cn/large/4b4d632fgw1f1hhza4495j20ku0rsjxs.jpg';
+[1, 2, 3, 4].forEach(item => {
+    download(url);
+})
+
+const u = 'http://pic.c-ctrip.com/VacationH5Pic/mice/wechat/ewm01.png';
 
 const dFile = (filePath) => {
     fetch(u, {

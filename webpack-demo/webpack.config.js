@@ -68,18 +68,19 @@ module.exports = mode => {
             },
             chunks: ["app", "manifest", "vendors~app"],
         }),
-        // parts.page({
-        //     title: "Another demo",
-        //     path: "another",
-        //     entry: {
-        //         another: path.join(PATHS.app, "another.js"),
-        //     },
-        //     chunks: ["another", "manifest", "vendors~app"],
-        // }),
+        parts.page({
+            title: "Another demo",
+            path: "another",
+            entry: {
+                another: path.join(PATHS.app, "another.js"),
+            },
+            chunks: ["another", "manifest", "vendors~app"],
+        }),
     ];
     const config =
         mode === "production" ? productionConfig : developmentConfig;
 
+    console.log('heheda1:', JSON.stringify(merge([commonConfig, config, { mode }].concat(pages))));
     return merge([commonConfig, config, { mode }].concat(pages));
     // if (mode === 'production') {
     //     return merge(commonConfig, productionConfig, { mode });

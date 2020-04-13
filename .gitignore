@@ -6,12 +6,9 @@
 
 .idea
 *.git
-*/yarn-error.lock
 */node_modules
-.idea/workspace.xml
 */yarn.lock
-antd-app/
-antd-app/*
-*/.idea/workspace.xml
+*/.idea
+.idea/
 */dist
 
