@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Worker from './test.worker.js'; // eslint-disable-line
-const videoUrl = 'https://focusmedia-creative-output-dev.oss-cn-shanghai.aliyuncs.com/creative/video/fromhevc/management/1de61f57af874068b51a011bf617ed13/FM_b738ac92d248486b90b716a87026a7bf.mp4';
+const videoUrl = '';
 
 let data;
 
