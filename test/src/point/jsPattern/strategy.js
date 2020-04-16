@@ -1,6 +1,6 @@
 /**************** 表单验证 *****************/
 /********** 策略对象 ***********/
-const strategies = {
+/* const strategies = {
     isNonEmpty: (value, errMsg) => {
         if (value === '') {
             return errMsg;
@@ -16,9 +16,9 @@ const strategies = {
             return errMsg
         }
     }
-};
+}; */
 /********** validator 类 ***********/
-var Validator = function() {
+/* var Validator = function() {
     this.cache = [];
 };
 
@@ -44,9 +44,9 @@ Validator.prototype.start = function() {
             return errMsg;
         }
     }
-}
+} */
 /********** 调用代码 ***********/
-const submitData = {
+/* const submitData = {
     a: 2,
     b: 1879
 };
@@ -64,7 +64,7 @@ const validataFunc = () => {
     return errMsg;
 };
 
-console.log('校验结果：', validataFunc());
+console.log('校验结果：', validataFunc()); */
 
 /**************** 奖金计算 *****************/
 // const getBond = (number) => {
@@ -85,58 +85,61 @@ console.log('校验结果：', validataFunc());
 
 
 /**************** 小球缓动动画 *****************/
-// const tween = { // 此处即为策略模式
-//     linear: (t, b, c, d) => {
-//         return c * t / d + b;
-//     },
-//     easeIn: (t, b, c, d) => {
-//         return c * (t /= d) * t + b;
-//     },
-//     strongEaseIn: (t, b, c, d) => {
-//         return c * (t /= d) * (t ** 4) + b;
-//     }
-// };
+console.log('in');
+const tween = { // 此处即为策略模式
+    linear: (t, b, c, d) => {
+        return c * t / d + b;
+    },
+    easeIn: (t, b, c, d) => {
+        return c * (t /= d) * t + b;
+    },
+    strongEaseIn: (t, b, c, d) => {
+        return c * (t /= d) * (t ** 4) + b;
+    }
+};
 
-// const Animate = function(dom) {
-//     this.dom = dom;
-//     this.startTime = 0;
-//     this.startPos = 0;
-//     this.endPos = 0;
-//     this.propertyName = null; // dom 节点需要被改变的 css 属性名
-//     this.easing = null;
-//     this.duration = null;
-// };
+const Animate = function(dom) {
+    this.dom = dom;
+    this.startTime = 0;
+    this.startPos = 0;
+    this.endPos = 0;
+    this.propertyName = null; // dom 节点需要被改变的 css 属性名
+    this.easing = null;
+    this.duration = null;
+};
 
-// Animate.prototype.start = function(propertyName, endPos, duration, easing) {
-//     this.startTime = +new Date;
-//     this.startPos = this.dom.getBoundingClientRect()[propertyName]; // dom 节点初始位置
-//     this.propertyName = propertyName;
-//     this.endPos = endPos;
-//     this.duration = duration;
-//     this.easing = tween[easing];
-//     const self = this;
-//     const timeId = setInterval(function() {
-//         if (self.step() === false) { // 如果动画结束，则清除定时器
-//             clearInterval(timeId);
-//         }
-//     }, 19)
-// };
+Animate.prototype.start = function(propertyName, endPos, duration, easing) {
+    this.startTime = +new Date;
+    this.startPos = this.dom.getBoundingClientRect()[propertyName]; // dom 节点初始位置
+    this.propertyName = propertyName;
+    this.endPos = endPos;
+    this.duration = duration;
+    this.easing = tween[easing];
+    const self = this;
+    const timeId = setInterval(function() {
+        if (self.step() === false) { // 如果动画结束，则清除定时器
+            clearInterval(timeId);
+        }
+    }, 19)
+};
 
-// Animate.prototype.step = function() {
-//     let t = +new Date;
-//     if (t > this.startTime + this.duration) { // 修正小球位置
-//         this.update(this.endPos);
-//         return false;
-//     }
-//     const pos = this.easing(t - this.startTime, this.startPos, this.endPos - this.startPos, this.duration);
-//     this.update(pos);
-// }
+Animate.prototype.step = function() {
+    let t = +new Date;
+    if (t > this.startTime + this.duration) { // 修正小球位置
+        this.update(this.endPos);
+        return false;
+    }
+    const pos = this.easing(t - this.startTime, this.startPos, this.endPos - this.startPos, this.duration);
+    this.update(pos);
+}
 
-// Animate.prototype.update = function(pos) {
-//     this.dom.style[this.propertyName] = pos + 'px';
-// }
+Animate.prototype.update = function(pos) {
+    console.log(33, pos)
+    this.dom.style[this.propertyName] = pos + 'px';
+}
 
-// // 开始测试
-// const $div = document.getElementById('div');
-// const animate = new Animate($div);
-// animate.start('left', 500, 1000, 'easeIn');
+// 开始测试
+const $div = document.getElementById('div');
+// const $div = document.getElementById('ball');
+const animate = new Animate($div);
+animate.start('left', 500, 1000, 'easeIn');
