@@ -1,16 +1,16 @@
 [A deep dive into react fiber internals](https://blog.logrocket.com/deep-dive-into-react-fiber-internals/) 翻译
-- 好奇 ReactDOM.render(<App />, document.getElementById('root')) 到底发生了什么吗？
+- 调用 ReactDOM.render(<App />, document.getElementById('root')) 后会发生什么呢？
 - 我们都知道 ReactDOM 会构建 DOM 树，然后渲染到屏幕。但是 react 是怎样构建 DOM 树的呢？当状态发生变化后它是怎样更新的呢？
-- 此文从 15.0.0 开始解释 react 怎样构建 DOM 树，然后解释 16.0.0 怎样解决这个问题，此文包含很多开发者不需要接触到的概念。
+- 此文先解释 react.15.0.0 怎样构建 DOM 树，然后解释 16.0.0 怎样解决这个问题，此文包含很多开发者不需要接触到的底层概念。
 ### stack reconciler
 - 从熟悉的
 ```javascript
-ReactDOM.render(<App />, document.getElementById('root'))
+    ReactDOM.render(<App />, document.getElementById('root'))
 ```
 开始说起。
 - reactDOM 模块将 <App /> 传递给 __reconciler__。这有两个问题：
 1、<App />是什么？2、什么是 reconciler?
-- <App /> 是一个 react 元素，元素描述了树。
+- <App /> 是一个 react 元素，对 tree 的描述。
 > An element is a plain object describing a component instance or DOM node and its desired properties.
 - 换而言之，元素不是真正的 DOM 节点或者组件实例；他们只是在告诉 react 元素的类型，属性，以及元素的 children 是什么。
 - 这就是 react 真正强大的地方。react 抽象出了关于构建、渲染、处理真实 DOM 的生命周期这些复杂的部分。方便更好理解，下面看下 a traditional approach using object-oriented.
@@ -47,5 +47,23 @@ ReactDOM.render(<App />, document.getElementById('root'))
 - a fiber node 代表一个栈帧，同时也代表一个 react 组件实例。它由以下元素组成：
 ##### Type | key | Child | Siblings
 #### Return
-
-
+    给父 fiber 节点的返回
+- pendingProps and memorizedProps：memorization 存储函数执行的结果，方便后面使用时再重复计算。pendingProps 是传递该组件的 props；memorizedProps 在执行栈末尾初始化，存储该节点的 props。当传进来的 pendingProps 与 memorized props 相等，意味着 fiber 之前的输出结果可以复用，阻止不需要的 work。
+- pendingWorkPriority：fiber work 的优先级队列。ReactPriorityLevel 模块存储的不同的优先级和内容。Nowork 代表较低的优先级。可以使用如下函数来判断 fiber 的优先级：
+```javascript
+    function matchesPriority (fiber, priority) {
+        return fiber.pendingWorkPriority !== 0 && fiber.pendingWorkPriority <= priority;
+    }
+```
+### Alternate
+    任何时候，一个组件实例至少有两个对应的 fibers。current fiber 和 in-progress fiber。current fiber 的替换 fiber 就是 in-progress fiber，in-progress fiber 的替换 fiber 就是 current fiber。current fiber 代表已经渲染的内容，in-progress fiber 是还没返回的 stack frame。
+### Output
+- React 应用的叶结点。
+- fiber 的输出是一个函数的返回值。每个 fiber 都有输出，但是输出都是在有宿主组件的子节点中生成的。输出然后被转成 tree。
+- 输出最终会传递给 renderer，方便同步更新到渲染环境。
+### render phase
+- 为了方便理解 react 是怎样构建 tree 和执行 reconciliation 算法，我们写在源码中写一个测试用例来调试下。
+- 简单渲染一个按钮，当点击按钮后，摧毁 button，并渲染一个有不同文案的 div，所以文案就是一个静态变量。
+### commit phase
+### conclusion
+    有个翻墙的 video 学习链接
