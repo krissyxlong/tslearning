@@ -9,7 +9,7 @@ function add(x: number, y: number): number {
 
 /** 书写完整函数类型: 函数类型包含两部分：参数类型和返回值类型 */
 /** 推断类型 */
-let myAdd: (baseValue: number, increment: number) => number =
+let myAdd: (baseValue: number, increment: number) => number = // 相比上述匿名函数版本多了个函数整体定义: (baseValue: number, increment: number) => number
     function(x: number, y: number): number { return x + y; };
 console.log(myAdd(1, 2));
 console.log(add(1, 2));

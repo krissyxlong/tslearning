@@ -23,7 +23,7 @@ function buildName1(firstName, lastName) {
     // ...
 }
 console.log(buildName(undefined, 'world'));
-/** 剩余参数 */
+/** 三、剩余参数 */
 function buildName2(firstName) {
     var restOfName = [];
     for (var _i = 1; _i < arguments.length; _i++) {
@@ -34,7 +34,7 @@ function buildName2(firstName) {
 var buildNameFun = buildName2;
 console.log('剩余参数', buildNameFun('1', '2', 'a'));
 /** this 和箭头函数 todo */
-/** 重载：
+/** 四、重载：
  * 场景：根据入参格式的不同，返回不同的类型。
  * 方法：为同一个函数提供多个函数类型定义来进行函数重载，重载函数会在调用的时候进行正确的类型检查 */
 var suits = ["hearts", "spades", "clubs", "diamonds"];

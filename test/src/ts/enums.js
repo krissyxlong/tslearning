@@ -1,4 +1,5 @@
 /** 数字枚举 */
+console.log('jejejejej');
 var Direction;
 (function (Direction) {
     Direction[Direction["Up"] = 1] = "Up";
