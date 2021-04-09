@@ -1,14 +1,16 @@
 var event = {
     clientList: {},
-    listen: function(key, fn) {
+    listen: function(key, fn) { // 订阅
         if (!this.clientList[key]) {
             this.clientList[key] = [];
         }
         this.clientList[key].push(fn);
     },
-    trigger: function() {
+    trigger: function() { // 发布;
+        // var fns = this.clientList;
         var key = Array.prototype.shift.call(arguments);
         var fns = this.clientList[key];
+
         if (!fns || fns.length === 0) {
             return;
         }
