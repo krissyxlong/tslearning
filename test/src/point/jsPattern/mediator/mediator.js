@@ -1,69 +1,69 @@
-/* 初始化玩家对象 */
-// function Player(name, teamColor) {
-//   this.name = name;
-//   this.teamColor = teamColor; // 队伍颜色
-//   this.state = 'live'; 
-//   this.partners = []; // 队友
-//   this.enemies = []; // 敌人
-// };
-// Player.prototype.win = function () {
-//   console.log(this.name + ' won');
-// }
-// Player.prototype.lose = function () {
-//   console.log(this.name + ' lost');
-// }
-// Player.prototype.die = function () {
-//   // 需遍历队友生存状态，如果全部死亡，则游戏结束；同时，敌人赢得胜利
-//   this.state = 'dead';
-//   let is_all_dead = this.partners.every(p => {
-//     return p.state === 'dead';
-//   });
-//   if (is_all_dead) {
-//     this.lose();
-//     // 通知队友全部死亡
-//     for ( let i = 0, partner; partner = this.partners[ i++ ]; ){
-//       partner.lose();
-//     }
-//     // 通知敌人游戏胜利
-//     for ( let i = 0, enemy; enemy = this.enemies[ i++ ]; ){
-//       enemy.win();
-//     }
-//   }
-// }
-// /* 创建玩家 */
-// let players = []
-// let playerFactory = function( name, teamColor ){
-//   let newPlayer = new Player( name, teamColor );
-//   for ( let i = 0, player; player = players[ i++ ]; ){ 
-//     // 通知所有的玩家，有新角色加入
-//     if ( player.teamColor === newPlayer.teamColor ){ // 如果是同一队的玩家
-//       player.partners.push(newPlayer); // 相互添加到队友列表
-//       newPlayer.partners.push(player);
-//     } else {
-//       player.enemies.push(newPlayer); // 相互添加到敌人列表
-//       newPlayer.enemies.push(player);
-//     }
-//   }
-//   players.push( newPlayer );
-//   return newPlayer;
-// };
+/* 初始化单个玩家对象 */
+function Player(name, teamColor) {
+  this.name = name;
+  this.teamColor = teamColor; // 队伍颜色
+  this.state = 'live'; 
+  this.partners = []; // 队友
+  this.enemies = []; // 敌人
+};
+Player.prototype.win = function () {
+  console.log(this.name + ' won');
+}
+Player.prototype.lose = function () {
+  console.log(this.name + ' lost');
+}
+Player.prototype.die = function () {
+  // 需遍历队友生存状态，如果全部死亡，则游戏结束；同时，敌人赢得胜利
+  this.state = 'dead';
+  let is_all_dead = this.partners.every(p => {
+    return p.state === 'dead';
+  });
+  if (is_all_dead) {
+    this.lose();
+    // 通知队友全部死亡
+    for ( let i = 0, partner; partner = this.partners[ i++ ]; ){
+      partner.lose();
+    }
+    // 通知敌人游戏胜利
+    for ( let i = 0, enemy; enemy = this.enemies[ i++ ]; ){
+      enemy.win();
+    }
+  }
+}
+/* 创建玩家 */
+let players = []
+let playerFactory = function( name, teamColor ){
+  let newPlayer = new Player( name, teamColor );
+  for ( let i = 0, player; player = players[ i++ ]; ){ 
+    // 通知所有的玩家，有新角色加入
+    if ( player.teamColor === newPlayer.teamColor ){ // 如果是同一队的玩家
+      player.partners.push(newPlayer); // 相互添加到队友列表
+      newPlayer.partners.push(player);
+    } else {
+      player.enemies.push(newPlayer); // 相互添加到敌人列表
+      newPlayer.enemies.push(player);
+    }
+  }
+  players.push( newPlayer );
+  return newPlayer;
+};
 
-// /* 红队 */
-// let player1 = playerFactory('A1', 'red');
-// let player2 = playerFactory('A2', 'red');
-// let player3 = playerFactory('A3', 'red');
-// let player4 = playerFactory('A4', 'red');
-// /* 蓝队 */
-// let player5 = playerFactory('B1', 'blue');
-// let player6 = playerFactory('B2', 'blue');
-// let player7 = playerFactory('B3', 'blue');
-// let player8 = playerFactory('B4', 'blue');
+/* 红队 */
+let player1 = playerFactory('A1', 'red');
+let player2 = playerFactory('A2', 'red');
+let player3 = playerFactory('A3', 'red');
+let player4 = playerFactory('A4', 'red');
+/* 蓝队 */
+let player5 = playerFactory('B1', 'blue');
+let player6 = playerFactory('B2', 'blue');
+let player7 = playerFactory('B3', 'blue');
+let player8 = playerFactory('B4', 'blue');
 
-// /* 红队玩家全部死亡 */
-// player1.die();
-// player2.die();
-// player3.die();
-// player4.die();
+/* 红队玩家全部死亡 */
+player1.die();
+player2.die();
+player3.die();
+player4.die();
 
 /* 玩家增多带来的问题：
   玩家之间因为 partner\enemy 相互耦合

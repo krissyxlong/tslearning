@@ -1,6 +1,7 @@
 
 # Log file
 *.log
+/node_modules
 
 # Package Files #
 

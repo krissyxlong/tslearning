@@ -1,32 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="src/ts/enums.js"></script>
-
     <style>
-        body{
-            height: 2000px;
+        body {
+            font-size: 100px;
+            /* font-size: 2rem; */
+            /* height: 2000px; */
         }
-        #hello{
-            position: relative;
-        }
-        #hi{
-            position: absolute;
-        }
-    </style>
-    <style type="text/css">
-        span.intLink {
-            cursor: pointer;
-            color: #0000ff;
-            text-decoration: underline;
+
+        .test {
+            font-size: 0.5rem;
         }
     </style>
 </head>
+
 <body>
-    <div id="hello">
+    <div class="test" id="hello">
         test1111
     </div>
+    <script>
+        var deviceWidth
+        setHtmlFontSize()
+
+        if (window.addEventListener) {
+            window.addEventListener('resize', function () {
+                setHtmlFontSize()
+            }, false)
+        }
+        function setHtmlFontSize() {
+            // 1366是设计稿的宽度，当大于1366时采用1366宽度，比例也是除以13.66
+            deviceWidth = document.documentElement.clientWidth > 1366 ? 1366 : document.documentElement.clientWidth
+            document.getElementsByTagName('html')[0].style.cssText = 'font-size:' + deviceWidth / 13.66 + 'px !important'
+        }
+    </script>
 </body>
+
 </html>

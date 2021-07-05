@@ -178,31 +178,3 @@
 // order(1, true, 500); // 输出:500 元定金预购，得到 100 优惠券
 // order(2, true, 500); // 输出:200 元定金预购，得到 50 优惠券
 // order(1, false, 500); // 输出:普通购买，无优惠券
-
-var setZeroes = function(matrix) {
-  const h = matrix.length - 1;
-  const w = matrix[0].length - 1;
-  const sw = []; // 已被处理过得列
-  const sh = []; // 已被处理过的行
-  for (let i = 0; i < h; i++) {
-      for (let j = 0; j < w; j++) {
-          if (matrix[i][j] == 0) {
-              sw.push(j);
-              sh.push(i);
-          }
-      }
-  }
-  for (let i = 0; i < h; i++) {
-      for (let j = 0; j < w; j++) {
-          if (sw.includes(j) || sh.includes(i)) {
-              matrix[i][j] = 0;
-          }
-      }
-  }
-};
-const arr = [
-  [1,1,1],
-  [1,0,1],
-  [1,1,1]
-];
-console.log(1111, setZeroes(arr));

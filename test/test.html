@@ -2,22 +2,61 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>kim 通知</title>
 </head>
 <style>
-</style>
-<body>
-  <h1>hello world</h1>
-  <button id="button1">刷新</button>
-  <button id="button2">增加</button>
-  <button id="button3">删除</button>
-  <div>
-    <button id="replay">重放</button>   
-  </div>
-  <script src="./src/point/jsPattern/order.js"></script>
-  <script src="./src/point/jsPattern/order1.js"></script>
 
-</body>
+</style>
+
+<body>
+  <canvas id="solar" width="500" height="500"></canvas>
+  </body>
+  
+  <script>
+    init();
+    draw();
+
+    function init() {
+      let canvas = document.querySelector("#solar");
+      let ctx = canvas.getContext("2d");
+      draw(ctx);
+    }
+
+    function draw(ctx) {
+      requestAnimationFrame(function step() {
+        drawDial(ctx); //绘制表盘
+        // drawAllHands(ctx); //绘制时分秒针
+        // requestAnimationFrame(step);
+      });
+    }
+
+    function drawDial(ctx) {
+      let pi = Math.PI;
+
+      ctx.clearRect(0, 0, 300, 300); //清除所有内容
+      ctx.save();
+
+      ctx.translate(150, 150); //一定坐标原点到原来的中心
+      ctx.beginPath();
+      ctx.arc(0, 0, 148, 0, 2 * pi); //绘制圆周
+      ctx.stroke();
+      ctx.closePath();
+
+                    for (let i = 0; i < 60; i++) {//绘制刻度。
+                      ctx.save();
+                      ctx.rotate(-pi / 2 + i * pi / 30);  //旋转坐标轴。坐标轴x的正方形从 向上开始算起
+                      ctx.beginPath();
+                      ctx.moveTo(110, 0);
+                      ctx.lineTo(140, 0);
+                      ctx.lineWidth = i % 5 ? 2 : 4;
+                      ctx.strokeStyle = i % 5 ? "blue" : "red";
+                      ctx.stroke();
+                      ctx.closePath();
+                      ctx.restore();
+                    }
+                    ctx.restore();
+                  }
+                </script>
 
 </html>
