@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>canvas</title>
+<style>
+  #canvas {
+    width: 1000px;
+    height: 1000px;
+  }
+</style>
+
+<body>
+  <canvas id="canvas" width="1000" height="1000"></canvas>
+  <button id="btn">button</button>
+</body>
+<!-- <script src="./canvas.js"></script> -->
+<script src="./canvas1.js"></script>
+<script>
+  // const canvas = document.getElementById('canvas');
+  // const ctx = canvas.getContext('2d');
+
+  // ctx.fillStyle = 'blue';
+  // ctx.strokeStyle = 'purple';
+  // ctx.strokeRect(0, 0, 1000, 1000);
+  // ctx.translate(0, canvas.height);
+  // ctx.scale(1, -1);
+  // ctx.lineCap = 'round';
+  // // ctx.transform(1, 0, 0, 1, 0, 0);
+  // // ctx.scale(1, -1)
+  // // ctx.lineWidth = 5;
+  // // ctx.beginPath();
+  // ctx.moveTo(0, 0);
+  // ctx.lineTo(0, 500);
+  // ctx.lineTo(450, 500);
+  // ctx.closePath();
+  // ctx.stroke();
+
+  // const canvas = document.getElementById('canvas');
+  // const ctx = canvas.getContext('2d');
+
+  // ctx.fillStyle = 'blue';
+  // ctx.strokeStyle = 'purple';
+
+  // var img = new Image();
+  // img.src = 'https://mdn.mozillademos.org/files/222/Canvas_createpattern.png';
+  // img.onload = function () {
+
+  //   // 创建图案
+  //   var ptrn = ctx.createPattern(img, 'repeat');
+  //   ctx.fillStyle = ptrn;
+  //   ctx.fillRect(0, 0, 150, 150);
+
+  // }
+
+  /* var radgrad = ctx.createRadialGradient(45, 45, 10, 52, 50, 30);
+  radgrad.addColorStop(0, '#A7D30C');
+  radgrad.addColorStop(0.9, '#019F62');
+  radgrad.addColorStop(1, 'rgba(1,159,98,0)');
+
+  var radgrad2 = ctx.createRadialGradient(105, 105, 20, 112, 120, 50);
+  radgrad2.addColorStop(0, '#FF5F98');
+  radgrad2.addColorStop(0.75, '#FF0188');
+  radgrad2.addColorStop(1, 'rgba(255,1,136,0)');
+
+  var radgrad3 = ctx.createRadialGradient(95, 15, 15, 102, 20, 40);
+  radgrad3.addColorStop(0, '#00C9FF');
+  radgrad3.addColorStop(0.8, '#00B5E2');
+  radgrad3.addColorStop(1, 'rgba(0,201,255,0)');
+
+  var radgrad4 = ctx.createRadialGradient(0, 150, 50, 0, 140, 90);
+  radgrad4.addColorStop(0, '#F4F201');
+  radgrad4.addColorStop(0.8, '#E4C700');
+  radgrad4.addColorStop(1, 'rgba(228,199,0,0)');
+
+  // 画图形
+  ctx.fillStyle = radgrad4;
+  ctx.fillRect(0, 0, 150, 150);
+  ctx.fillStyle = radgrad3;
+  ctx.fillRect(0, 0, 150, 150);
+  ctx.fillStyle = radgrad2;
+  ctx.fillRect(0, 0, 150, 150);
+  ctx.fillStyle = radgrad;
+  ctx.fillRect(0, 0, 150, 150); */
+
+  /* var lineargradient = ctx.createLinearGradient(0, 0, 0, 150);
+  lineargradient.addColorStop(0, 'white');
+  lineargradient.addColorStop(0.3, 'black');
+  lineargradient.addColorStop(0.3, 'blue');
+  lineargradient.addColorStop(1, 'red');
+  // assign gradients to fill and stroke styles
+  ctx.fillStyle = lineargradient;
+  // ctx.strokeStyle = lingrad2;
+  // draw shapes
+  ctx.fillRect(10, 10, 130, 130);
+  ctx.strokeRect(50, 50, 50, 50); */
+
+
+  // ctx.lineWidth = 5;
+  // ctx.beginPath();
+  // ctx.moveTo(10.5, 5);
+  // ctx.lineTo(10.5, 140);
+  // ctx.stroke();
+
+  // ctx.lineWidth = 6;
+  // ctx.beginPath();
+  // ctx.moveTo(30.5, 5);
+  // ctx.lineTo(30.5, 140);
+  // ctx.stroke();
+
+  // for (var i = 0; i < 10; i++) {
+  //   ctx.lineWidth = 1 + i;
+  //   ctx.beginPath();
+  //   ctx.moveTo(5.5 + i * 14, 5);
+  //   ctx.lineTo(5.5 + i * 14, 140);
+  //   ctx.stroke();
+  // }
+
+  /* // 透明度的问题
+  ctx.fillStyle = '#FD0';
+  ctx.fillRect(0, 0, 75, 75);
+  ctx.fillStyle = '#6C0';
+  ctx.fillRect(75, 0, 75, 75);
+  ctx.fillStyle = '#09F';
+  ctx.fillRect(0, 75, 75, 75);
+
+  // 设置透明度值
+  ctx.fillStyle = '#F30';
+  ctx.fillRect(75, 75, 75, 75);
+
+  ctx.globalAlpha = 0.2;
+  ctx.fillStyle = '#FFF';
+  // 画半透明圆
+  for (var i = 0; i < 7; i++) {
+    ctx.beginPath();
+    ctx.arc(75, 75, 10 + 10 * i, 0, Math.PI * 2, true);
+    ctx.fill();
+  } */
+
+  /* for (let i = 0; i < 8; i++) {
+    for (let j = 0; j < 8; j++) {
+      ctx.fillStyle = `rgba(${32 * i},${32 * j}, 100)`;
+      ctx.fillRect(i * 8, j * 8, 8, 8);
+    }
+  } */
+
+
+  /* // 二次贝塞尔曲线
+  ctx.beginPath();
+  ctx.moveTo(75, 25);
+  ctx.quadraticCurveTo(25, 25, 25, 62.5);
+  ctx.quadraticCurveTo(25, 100, 50, 100);
+  ctx.quadraticCurveTo(50, 120, 30, 125);
+  ctx.quadraticCurveTo(60, 120, 65, 100);
+  ctx.quadraticCurveTo(125, 100, 125, 62.5);
+  ctx.quadraticCurveTo(125, 25, 75, 25);
+  ctx.stroke(); */
+
+
+  /* // 矩形
+  ctx.fillStyle = 'green';
+  ctx.fillRect(25, 25, 100, 100);
+  ctx.clearRect(45, 45, 60, 60);
+  ctx.strokeRect(50, 50, 50, 50);
+
+  // 三角形
+  ctx.fillStyle = 'red';
+  ctx.beginPath();
+  ctx.moveTo(75, 50);
+  ctx.lineTo(100, 75);
+  ctx.lineTo(100, 25);
+  // ctx.lineTo(75, 50);
+  ctx.closePath();
+  ctx.stroke();
+
+  // 笑脸
+  ctx.fillStyle = 'red';
+  ctx.beginPath();
+  ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // 绘制
+  ctx.moveTo(110, 75);
+  ctx.arc(75, 75, 35, 0, Math.PI, false);   // 口(顺时针)
+  ctx.moveTo(65, 65);
+  ctx.arc(60, 65, 5, 0, Math.PI * 2, true);  // 左眼
+  ctx.moveTo(95, 65);
+  ctx.arc(90, 65, 5, 0, Math.PI * 2, true);  // 右眼
+  ctx.stroke(); */
+</script>
+
+</html>
