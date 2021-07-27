@@ -10,7 +10,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "start": "node ./server/app.js"
   },
   "repository": {
     "type": "git",
@@ -25,5 +26,9 @@
   "homepage": "https://github.com/krissyxlong/tslearning#readme",
   "devDependencies": {
     "vuepress": "^1.8.2"
+  },
+  "dependencies": {
+    "koa-mount": "^4.0.0",
+    "koa-send": "^5.0.1"
   }
 }

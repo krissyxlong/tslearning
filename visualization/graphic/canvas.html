@@ -8,13 +8,41 @@
     height: 1000px;
   }
 </style>
+<script src="./canvas2.js"></script>
+<style>
+  body {
+    background: black;
+    color: #CCCCCC;
+  }
 
-<body>
-  <canvas id="canvas" width="1000" height="1000"></canvas>
-  <button id="btn">button</button>
+  #c2 {
+    background-image: url(icon.jpeg);
+    background-repeat: no-repeat;
+  }
+
+  div {
+    float: left;
+    border: 1px solid #444444;
+    padding: 10px;
+    margin: 10px;
+    background: #3B3B3B;
+  }
+</style>
+
+<body onload="processor.doLoad()">
+  <div>
+    <!-- <video id="video"
+      src="https://vd4.bdstatic.com/mda-kbuebc9nqsrrqtr0/sc/mda-kbuebc9nqsrrqtr0.mp4?v_from_s=hkapp-haokan-suzhou&auth_key=1626668172-0-0-adb0a234a446dfc8e7a41e841a031b52&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=3000156_3"
+      controls="true"></video> -->
+    <video id="video" src="./a.mp4" controls="true"></video>
+  </div>
+  <div>
+    <canvas id="c1" width="460" height="396"></canvas>
+    <canvas id="c2" width="160" height="96"></canvas>
+  </div>
 </body>
 <!-- <script src="./canvas.js"></script> -->
-<script src="./canvas1.js"></script>
+<!-- <script src="./canvas1.js"></script> -->
 <script>
   // const canvas = document.getElementById('canvas');
   // const ctx = canvas.getContext('2d');
